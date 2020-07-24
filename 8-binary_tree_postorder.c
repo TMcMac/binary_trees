@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_inorder - a short program to print binary tree
+ * binary_tree_postorder - a short program to print binary tree
  * postorder fashion: left, parent, right.
  * @tree: originally the root node
  * @func: a function to print the n value of the current node
