@@ -1,19 +1,19 @@
-#0x1D. C - Binary trees
+# 0x1D. C - Binary trees
 
 Foundations - Low-level programming & Algorithm ― Data structures and Algorithms
 by Alexandre Gautier, Software Engineer at Holberton, Inc.
 Ongoing project - started 11-19-2020, must end by 11-25-2020
 
-##Resources
+## Resources
 Read or watch:
 
-[Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
-[Data Structure and Algorithms - Tree](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
-[Tree Traversal](https://www.tutorialspoint.com/data_structures_algorithms/tree_traversal.htm)
-[Binary Search Tree](https://en.wikipedia.org/wiki/Binary_search_tree)
-[Data structures: Binary Tree](https://www.youtube.com/watch?v=H5JubkIy_p8&t=0s)
+* [Binary tree](https://en.wikipedia.org/wiki/Binary_tree)
+* [Data Structure and Algorithms - Tree](https://www.tutorialspoint.com/data_structures_algorithms/tree_data_structure.htm)
+* [Tree Traversal](https://www.tutorialspoint.com/data_structures_algorithms/tree_traversal.htm)
+* [Binary Search Tree](https://en.wikipedia.org/wiki/Binary_search_tree)
+* [Data structures: Binary Tree](https://www.youtube.com/watch?v=H5JubkIy_p8&t=0s)
 
-##Learning Objectives
+## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 * What is a binary tree?
@@ -23,8 +23,8 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 * What are the different traversal methods to go through a binary tree?
 * What is a complete, a full, a perfect, a balanced binary tree?
 
-##Requirements
-###General
+## Requirements
+### General
 * Allowed editors: vi, vim, emacs
 * All your files will be compiled on Ubuntu 14.04 LTS
 * Your programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
@@ -39,10 +39,11 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 * Don’t forget to push your header file
 * All your header files should be include guarded
 
-Data structures
+### Data structures
 Please use the following data structures and types for binary trees. Don’t forget to include them in your header file.
 
 Basic Binary Tree
+
 ```/**
  * struct binary_tree_s - Binary tree node
  *
@@ -63,12 +64,15 @@ typedef struct binary_tree_s binary_tree_t;
 ```
 
 Binary Search Tree
+
 ```typedef struct binary_tree_s bst_t;```
 
 AVL Tree
+
 ```typedef struct binary_tree_s avl_t;```
 
 Max Binary Heap
+
 ```typedef struct binary_tree_s heap_t;```
 
 Note: For tasks 0 to 23 (included), you have to deal with simple binary trees. They are not BSTs, thus they don’t follow any kind of rule.
@@ -76,6 +80,7 @@ Note: For tasks 0 to 23 (included), you have to deal with simple binary trees. T
 Print function
 To match the examples in the tasks, you are given this function
 This function is used only for visualization purposes. You don’t have to push it to your repo. It may not be used during the correction
+
 ```#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -177,9 +182,10 @@ void binary_tree_print(const binary_tree_t *tree)
 }```
 
 
-##Tasks
 
-###0. New node mandatory
+## Tasks
+
+### 0. New node mandatory
 Write a function that creates a binary tree node
 
 * Prototype: binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
@@ -187,6 +193,7 @@ Write a function that creates a binary tree node
 * And value is the value to put in the new node
 * When created, a node does not have any child
 * Your function must return a pointer to the new node, or NULL on failure
+
 ```alex@/tmp/binary_trees$ cat 0-main.c 
 #include <stdlib.h>
 #include "binary_trees.h"
@@ -219,17 +226,19 @@ alex@/tmp/binary_trees$ ./0-node
   .--(012)--.         .--(402)--.
 (006)     (016)     (256)     (512)
 alex@/tmp/binary_trees$ ```
+
 File: 0-binary_tree_node.c
 
-###1. Insert left mandatory
+### 1. Insert left mandatory
 Write a function that inserts a node as the left-child of another node
 
 * Prototype: binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 * Where parent is a pointer to the node to insert the left-child in
 * And value is the value to store in the new node
-Your function must return a pointer to the created node, or NULL on failure or if parent is NULL
-If parent already has a left-child, the new node must take its place, and the old left-child must be set as the left-child of the new node.
-alex@/tmp/binary_trees$ cat 1-main.c 
+* Your function must return a pointer to the created node, or NULL on failure or if parent is NULL
+* If parent already has a left-child, the new node must take its place, and the old left-child must be set as the left-child of the new node.
+
+```alex@/tmp/binary_trees$ cat 1-main.c 
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -261,20 +270,21 @@ alex@/tmp/binary_trees$ ./1-left
        .--(098)-------.
   .--(054)       .--(402)
 (012)          (128)                                            
-alex@/tmp/binary_trees$
-Repo:
+alex@/tmp/binary_trees$```
 
-GitHub repository: binary_trees
 File: 1-binary_tree_insert_left.c
 
-2. Insert right mandatory
+
+### 2. Insert right mandatory
 Write a function that inserts a node as the right-child of another node
 
-Prototype: binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
-Where parent is a pointer to the node to insert the right-child in
-And value is the value to store in the new node
-Your function must return a pointer to the created node, or NULL on failure or if parent is NULL
-If parent already has a right-child, the new node must take its place, and the old right-child must be set as the right-child of the new node.
+* Prototype: binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
+* Where parent is a pointer to the node to insert the right-child in
+* And value is the value to store in the new node
+* Your function must return a pointer to the created node, or NULL on failure or if parent is NULL
+* If parent already has a right-child, the new node must take its place, and the old right-child must be set as the right-child of the new node.
+
+```
 alex@/tmp/binary_trees$ cat 2-main.c 
 #include <stdlib.h>
 #include <stdio.h>
@@ -307,18 +317,20 @@ alex@/tmp/binary_trees$ ./2-right
   .-------(098)--.
 (012)--.       (128)--.
      (054)          (402)
-alex@/tmp/binary_trees$
-Repo:
+alex@/tmp/binary_trees$ 
+```
 
-GitHub repository: binary_trees
 File: 2-binary_tree_insert_right.c
 
-3. Delete mandatory
+
+### 3. Delete mandatory
 Write a function that deletes an entire binary tree
 
-Prototype: void binary_tree_delete(binary_tree_t *tree);
-Where tree is a pointer to the root node of the tree to delete
-If tree is NULL, do nothing
+* Prototype: void binary_tree_delete(binary_tree_t *tree);
+* Where tree is a pointer to the root node of the tree to delete
+* If tree is NULL, do nothing
+
+```
 alex@/tmp/binary_trees$ cat 3-main.c 
 #include <stdlib.h>
 #include <stdio.h>
@@ -362,9 +374,8 @@ alex@/tmp/binary_trees$ valgrind ./3-del
 ==13264== For counts of detected and suppressed errors, rerun with: -v
 ==13264== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 alex@/tmp/binary_trees$
-Repo:
+```
 
-GitHub repository: binary_trees
 File: 3-binary_tree_delete.c
 
 4. Is leaf mandatory
