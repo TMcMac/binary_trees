@@ -44,7 +44,8 @@ Please use the following data structures and types for binary trees. Don’t for
 
 Basic Binary Tree
 
-```/**
+```
+/**
  * struct binary_tree_s - Binary tree node
  *
  * @n: Integer stored in the node
@@ -81,7 +82,8 @@ Print function
 To match the examples in the tasks, you are given this function
 This function is used only for visualization purposes. You don’t have to push it to your repo. It may not be used during the correction
 
-```#include <stdio.h>
+```
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "binary_trees.h"
@@ -179,7 +181,8 @@ void binary_tree_print(const binary_tree_t *tree)
 														       free(s[i]);
 														       }
 														       free(s);
-}```
+}
+```
 
 
 
@@ -194,7 +197,8 @@ Write a function that creates a binary tree node
 * When created, a node does not have any child
 * Your function must return a pointer to the new node, or NULL on failure
 
-```alex@/tmp/binary_trees$ cat 0-main.c 
+```
+alex@/tmp/binary_trees$ cat 0-main.c 
 #include <stdlib.h>
 #include "binary_trees.h"
 
@@ -225,7 +229,8 @@ alex@/tmp/binary_trees$ ./0-node
        .-------(098)-------.
   .--(012)--.         .--(402)--.
 (006)     (016)     (256)     (512)
-alex@/tmp/binary_trees$ ```
+alex@/tmp/binary_trees$ 
+```
 
 File: 0-binary_tree_node.c
 
@@ -238,7 +243,8 @@ Write a function that inserts a node as the left-child of another node
 * Your function must return a pointer to the created node, or NULL on failure or if parent is NULL
 * If parent already has a left-child, the new node must take its place, and the old left-child must be set as the left-child of the new node.
 
-```alex@/tmp/binary_trees$ cat 1-main.c 
+```
+alex@/tmp/binary_trees$ cat 1-main.c 
 #include <stdlib.h>
 #include <stdio.h>
 #include "binary_trees.h"
@@ -270,7 +276,8 @@ alex@/tmp/binary_trees$ ./1-left
        .--(098)-------.
   .--(054)       .--(402)
 (012)          (128)                                            
-alex@/tmp/binary_trees$```
+alex@/tmp/binary_trees$
+```
 
 File: 1-binary_tree_insert_left.c
 
@@ -385,6 +392,8 @@ Prototype: int binary_tree_is_leaf(const binary_tree_t *node);
 Where node is a pointer to the node to check
 Your function must return 1 if node is a leaf, otherwise 0
 If node is NULL, return 0
+
+```
 alex@/tmp/binary_trees$ cat 4-main.c 
 #include <stdlib.h>
 #include <stdio.h>
@@ -424,6 +433,8 @@ Is 98 a leaf: 0
 Is 128 a leaf: 0
 Is 402 a leaf: 1
 alex@/tmp/binary_trees$
+```
+
 Repo:
 
 GitHub repository: binary_trees
@@ -436,6 +447,8 @@ Prototype: int binary_tree_is_root(const binary_tree_t *node);
 Where node is a pointer to the node to check
 Your function must return 1 if node is a root, otherwise 0
 If node is NULL, return 0
+
+```
 alex@/tmp/binary_trees$ cat 5-main.c 
 #include <stdlib.h>
 #include <stdio.h>
@@ -475,6 +488,8 @@ Is 98 a root: 1
 Is 128 a root: 0
 Is 402 a root: 0
 alex@/tmp/binary_trees$
+```
+
 Repo:
 
 GitHub repository: binary_trees
@@ -487,6 +502,8 @@ Prototype: void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int
 Where tree is a pointer to the root node of the tree to traverse
 And func is a pointer to a function to call for each node. The value in the node must be passed as a parameter to this function.
 If tree or func is NULL, do nothing
+
+```
 alex@/tmp/binary_trees$ cat 6-main.c
 #include <stdlib.h>
 #include <stdio.h>
@@ -536,6 +553,8 @@ alex@/tmp/binary_trees$ ./6-pre
 256
 512
 alex@/tmp/binary_trees$
+```
+
 Repo:
 
 GitHub repository: binary_trees
@@ -548,6 +567,8 @@ Prototype: void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int)
 Where tree is a pointer to the root node of the tree to traverse
 And func is a pointer to a function to call for each node. The value in the node must be passed as a parameter to this function.
 If tree or func is NULL, do nothing
+
+```
 alex@/tmp/binary_trees$ cat 7-main.c
 #include <stdlib.h>
 #include <stdio.h>
@@ -597,6 +618,8 @@ alex@/tmp/binary_trees$ ./7-in
 402
 512
 alex@/tmp/binary_trees$
+```
+
 Repo:
 
 GitHub repository: binary_trees
