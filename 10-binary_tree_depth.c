@@ -21,7 +21,7 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 }
 
 /**
- * depth_helper - a function to calculate the
+ * depth_checker - a function to calculate the
  * depth of a node recusively
  * @tree: node in a binary tree
  * Return: depth
